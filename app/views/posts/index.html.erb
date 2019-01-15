@@ -3,7 +3,7 @@
 
 <h1> TESTING!!! </h1>
 <div class="post">
-<% @user.posts.each do |p| %>
+<% @user.posts.reverse_each do |p| %>
     <img src ="<%= p.image_uri %>">
     <p>Vendor: <%= p.vendor %></p>
     <p>Vendor Address: <%= p.vendor_loc %></p>
