@@ -1,2 +1,13 @@
-<h1>Users#show</h1>
-<p>Find me in app/views/users/show.html.erb</p>
+<h1> Your Profile </h1>
+
+<p> <%= current_user.name %> | <%= current_user.email %> </p>
+
+<% @user.posts.each do |p| %>
+    
+    <p><image src="<%= p.image_uri %>"></p>
+    <p><%= p.Vendor %></p>
+    <p><%= p.Vendor_loc %></p>
+        
+
+<h6><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></h6>
+<h6><a href="/users/<%= current_user.id %>/posts/<%= @user.postsedit">Edit Post</a></h6>

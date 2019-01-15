@@ -8,7 +8,7 @@ class SessionsController < ApplicationController
       #Check if user exists in the database... if yes, create session and redirect to user's page
       if @user && @user.authenticate(params[:password])
         session[:user_id] = @user.id
-        redirect_to user_path(@user)
+        redirect_to users_path, success: "Welcome to Haute Food13!  Success!  Your profile has been created."
       else
         #If user does not exist in database, redirect to login or sign up page
         redirect_to new_user_path, danger: "Error! Invalid email or password!"

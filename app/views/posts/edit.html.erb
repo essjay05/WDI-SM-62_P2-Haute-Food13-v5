@@ -1,2 +1,28 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="row">
+  <div class="col-md-6 offset-md-3">
+    <h1>Edit Your Post</h1>
+    <%= form_for(@post, url: user_posts_path(current_user.id)) do |p| %>  
+      <div class="form-group">
+        <%= p.label :image_uri, 'Image URI*' %>
+        <%= p.text_field :image_uri, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= p.label :vendor, 'Vendor*' %>
+        <%= p.text_field :vendor, class: 'form-control' %>
+      </div>
+
+      <div class="form-group">
+        <%= p.label :vendor_loc, 'Vendor Address*' %>
+        <%= p.text_field :vendor_loc, class: 'form-control' %>
+      </div>
+      
+      <div class="form-group">
+        <%= p.label :tag, 'Keyword*', class: 'col-md-4 control-label' %>
+        <%= p.text_field :tag, class: 'form-control' %>
+      </div>
+
+      <%= p.submit 'Submit Post', class: 'btn btn-primary' %>
+    <% end %>
+  </div>
+</div>

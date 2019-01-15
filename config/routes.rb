@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   #USERS routes
   #Root is home/index/landing page
   root 'users#index'
-  resources :users do#Automatically generates all RESTful routes for provided resources
+  resources :users do #Automatically generates all RESTful routes for provided resources
     resources :posts
   end
   # SESSIONS Routes
