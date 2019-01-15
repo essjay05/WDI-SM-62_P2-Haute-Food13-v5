@@ -11,6 +11,7 @@ class PostsController < ApplicationController
   def show
     @user = User.find(params[:user_id])
     set_post
+    render plain: params[:vendor].inspect
     
   end
 
