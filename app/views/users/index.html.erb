@@ -13,9 +13,13 @@
   </thead>
 
   <tbody>
-    <% @users.each do |post| %>
+    <% @posts.each do |post| %>
       <tr>
-        <td><%= link_to 'Show', post %></td>
+        <td>
+        <image src="<%= post.image_uri %>"></p>
+        <p><%= post.vendor %></p>
+        <p><%= post.vendor_loc %></p>
+        </td>
       </tr>
     <% end %>
   </tbody>

@@ -1,32 +1,17 @@
 <h1>Posts#index</h1>
 <p>Find me in app/views/posts/index.html.erb</p>
 
+<h1> TESTING!!! </h1>
+<div class="post">
 <% @user.posts.each do |p| %>
-    <p><%= p.image_uri %> </p>
+    <img src ="<%= p.image_uri %>">
+    <p>Vendor: <%= p.vendor %></p>
+    <p>Vendor Address: <%= p.vendor_loc %></p>
+    <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
 <% end %>
-
-
-<h1 style="text-align: center">Realtime PhotoFeeds!</h1>
-<div class="wrapper">
-    <form class="uploads" method="POST" action="/post/show" enctype="multipart/form-data">
-        <%= token_tag %> 
-        <div class="form-group">
-            <label for="caption">Caption</label>
-            <input type="text" name="caption">
-        </div>
-        <div style="margin-left: 5px;">
-            <input type="file" name="image">
-        </div>
-        <div>
-            <input type="submit" value="Upload">
-        </div>
-    </form>
-    <div class="images">
-        <div class="post">
-            <div>
-                <img class="post-image" src="https://pbs.twimg.com/media/DOXI0IEXkAAkokm.jpg">
-            </div>
-            <p class="post-caption">Living my best life</p>
-        </div>
-    </div>
 </div>
+
+
+
+
+<h3> TEST 2 </h3>

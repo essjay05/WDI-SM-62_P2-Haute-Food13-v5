@@ -1,15 +1,17 @@
 class PostsController < ApplicationController
+  before_action :set_user
   before_action :set_post, only: [:show, :edit, :update, :destroy]
+ 
 
   # INDEX/SHOW all posts
   def index
     @posts = Post.all
-    @user = User.find(params[:user_id])
+    set_user
   end
 
   # SHOW SINGLE POST
   def show
-    @user = User.find(params[:user_id])
+    set_user
     set_post
     render plain: params[:vendor].inspect
     
@@ -22,13 +24,13 @@ class PostsController < ApplicationController
 
   # Render edit post form/page
   def edit
-    @user = User.find(params[:user_id])
+    set_user
     set_post
   end
 
   # Create new post
   def create
-    @user = User.find(params[:user_id])
+    set_user
     @post = @user.posts.create(post_params)
 
     if @post.save
@@ -41,7 +43,7 @@ class PostsController < ApplicationController
 
   # PATCH/PUT edited post
   def update
-    @user = User.find(params[:user_id])
+    set_user
     set_post
 
     if @post.update_attributes(post_params)
@@ -53,15 +55,20 @@ class PostsController < ApplicationController
 
   # DELETE/destroy post
   def destroy
-    @user = User.find(params[:user_id])
+    set_user
     set_post
     @post.destroy
+    redirect_to user_path, success: "Profile successfully deleted!"
   end
 
   private
   # Use callbacks to share common setup or constraints between actions.
   def set_post
     @post = Post.find(params[:id])
+  end
+
+  def set_user
+    @user = User.find(params[:user_id])
   end
 
   def post_params

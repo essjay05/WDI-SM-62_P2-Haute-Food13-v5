@@ -5,6 +5,7 @@ class UsersController < ApplicationController
   # Action to show ALL Users photos
   def index
     @users = User.all
+    @posts = Post.all
   end
 
   # Show single User
@@ -27,7 +28,7 @@ class UsersController < ApplicationController
 
     if @user.save
       authenticate(@user)
-      redirect_to sessions_path, success: "Welcome to Haute Food13!  Success!  Your profile has been created."
+      # redirect_to sessions_path, success: "Welcome to Haute Food13!  Success!  Your profile has been created."
     else
       render :new
     end

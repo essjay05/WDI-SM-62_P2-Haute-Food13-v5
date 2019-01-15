@@ -5,9 +5,12 @@
 <% @user.posts.each do |p| %>
     
     <p><image src="<%= p.image_uri %>"></p>
-    <p><%= p.Vendor %></p>
-    <p><%= p.Vendor_loc %></p>
+    <p><%= p.vendor %></p>
+    <p><%= p.vendor_loc %></p>
+    <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
+
+<% end %>
         
 
 <h6><a href="/users/<%= current_user.id %>/edit">Edit Profile</a></h6>
-<h6><a href="/users/<%= current_user.id %>/posts/<%= @user.postsedit">Edit Post</a></h6>
+
