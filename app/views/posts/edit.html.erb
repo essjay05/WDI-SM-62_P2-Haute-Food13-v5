@@ -1,7 +1,7 @@
 <div class="row">
   <div class="col-md-6 offset-md-3">
     <h1>Edit Your Post</h1>
-    <%= form_for(@post, url: user_posts_path(current_user.id)) do |p| %>  
+    <%= form_for(@post, url: user_post_path(current_user.id)) do |p| %>  
       <div class="form-group">
         <%= p.label :image_uri, 'Image URI*' %>
         <%= p.text_field :image_uri, class: 'form-control' %>

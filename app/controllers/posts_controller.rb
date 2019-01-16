@@ -34,7 +34,7 @@ class PostsController < ApplicationController
     @post = @user.posts.create(post_params)
 
     if @post.save
-      redirect_to users_path
+      redirect_to users_path, success: "Post successfully updated!"
     else
       render :new
     end
@@ -45,9 +45,10 @@ class PostsController < ApplicationController
   def update
     set_user
     set_post
-
+    
     if @post.update_attributes(post_params)
-      redirect_to user_posts_path
+     
+      redirect_to user_posts_path, success: "Post successfully updated!"
     else
       render :edit
     end
@@ -58,7 +59,7 @@ class PostsController < ApplicationController
     set_user
     set_post
     @post.destroy
-    redirect_to user_path, success: "Profile successfully deleted!"
+    redirect_to user_path, success: "Post successfully deleted!"
   end
 
   private
