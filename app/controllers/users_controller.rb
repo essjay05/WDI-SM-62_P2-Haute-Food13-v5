@@ -26,9 +26,12 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
-    if @user.save
-      authenticate(@user)
-      # redirect_to sessions_path, success: "Welcome to Haute Food13!  Success!  Your profile has been created."
+    if User.find_by_email(@user.email) == true
+      redirect_to new_session_path, danger: "User already exists! Please log in!"
+    elsif 
+      @user.save
+      # authenticate(@user)
+      redirect_to users_path, success: "Welcome! Your profile has successfully been created!"
     else
       render :new
     end
@@ -69,15 +72,18 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
-  def authenticate(user)
-      @user = User.find_by_email(user.email)
-      #Check if user exists in the database... if yes, create session and redirect to user's page
-      if @user && @user.authenticate(params[:password])
-        session[:user_id] = @user.id
-      else
-        #If user does not exist in database, redirect to login or sign up page
-        redirect_to new_user_path, danger: "Error! Invalid email or password!"
-        #BONUS: flash message that indicates user does not exist or email/password is invalid
-      end
-  end
+  # def authenticate(user)
+  #     @user = User.find_by_email(params[:email])
+      
+  #     #Check if user exists in the database... if yes, create session and redirect to user's page
+  #     if @user && @user.authenticate(params[:password])
+        
+  #       session[:user_id] = @user.id
+  #       redirect_to users_path
+  #     else
+  #       #If user does not exist in database, redirect to login or sign up page
+  #       redirect_to new_user_path, danger: "Error! Invalid email or password!"
+  #       #BONUS: flash message that indicates user does not exist or email/password is invalid
+  #     end
+  # end
 end
