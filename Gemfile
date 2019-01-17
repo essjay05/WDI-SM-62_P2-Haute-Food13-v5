@@ -34,7 +34,7 @@ gem 'cloudinary'
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-gem 'fog'
+gem 'fog-aws'
 gem 'carrierwave'
 
 # Use Capistrano for deployment

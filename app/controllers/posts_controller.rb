@@ -34,9 +34,9 @@ class PostsController < ApplicationController
     @post = @user.posts.create(post_params)
 
     if @post.save
-      redirect_to users_path
+      redirect_to users_path, success: "Success you've uploaded your photo!"
     else
-      render :new
+      render :new, danger: "Please check the error, somethign is wrong with your input."
     end
   end
 
