@@ -2,7 +2,7 @@
 
 <p> <%= current_user.name %> | <%= current_user.email %> </p>
 
-<% @user.posts.each do |p| %>
+<% @user.posts.reverse_each do |p| %>
     
     <div class='image'>
         <% if p.image_uri.attached? %>
