@@ -36,6 +36,8 @@ gem 'cloudinary'
 gem 'mini_magick', '~> 4.8'
 gem 'fog-aws'
 gem 'carrierwave', '~> 1.0'
+gem 'aws-sdk-s3', require: false
+# Need to do rails active_storage:install .... then rails db:migrate
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
