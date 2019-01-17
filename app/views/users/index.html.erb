@@ -16,7 +16,9 @@
     <% @posts.reverse_each do |post| %>
       <tr>
         <td>
-        <image src="<%= post.image_uri %>"></p>
+        <% if post.image_uri.attached? %>
+        <%= image_tag(post.image_uri) %>
+        <% end %>
         <p><%= post.vendor %></p>
         <p><%= post.vendor_loc %></p>
         <p>User ID#: <%= post.user_id %></p>

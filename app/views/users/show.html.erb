@@ -4,10 +4,14 @@
 
 <% @user.posts.each do |p| %>
     
-    <p><image src="<%= p.image_uri %>"></p>
-    <p><%= p.vendor %></p>
-    <p><%= p.vendor_loc %></p>
-    <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
+    <div class='image'>
+        <% if p.image_uri.attached? %>
+        <%= image_tag(p.image_uri) %>
+        <% end %>
+        <p><%= p.vendor %></p>
+        <p><%= p.vendor_loc %></p>
+        <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
+    </div>
 
 <% end %>
 
