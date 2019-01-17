@@ -31,9 +31,18 @@ class PostsController < ApplicationController
   # Create new post
   def create
     set_user
+    # upload image to cloudinary
+    @value = Cloudinary::Uploader.upload(params[:image])
+    # render plain: @value['secure_url']
+    # create a new post object and save to db
     @post = @user.posts.create(post_params)
-
     if @post.save
+      # broadcasting posts using pusher
+      Pusher.trigger('posts-channel','new-post', {
+        image_uri: @post.image_uri,
+        vendor: @post.vendor,
+        vendor_loc: @post.vendor_loc
+      })
       redirect_to users_path, success: "Success you've uploaded your photo!"
     else
       render :new, danger: "Please check the error, somethign is wrong with your input."
@@ -72,6 +81,6 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:image_uri, :vendor, :vendor_loc, :tag, :user_id)
+    params.require(:post).permit({:image_uri => @value['secure_url'], :vendor => params[:vendor], :vendor_loc => params[:vendor_loc], :tag => params[:tag], :user_id => params[:user_id]})
   end
 end
