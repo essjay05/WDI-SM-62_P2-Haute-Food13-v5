@@ -27,4 +27,4 @@
 /config/master.key
 
 #Cloudinary API key:
-#Cloud Name: hautefood13 |  API Key: 792843124671388   | Environment Variable: CLOUDINARY_URL=cloudinary://792843124671388:Dj5jcl8jEwrikwkaa_69lAWcA88@hautefood13
+# Cloud Name: hautefood13 |  API Key: 792843124671388   | Environment Variable: CLOUDINARY_URL=cloudinary://792843124671388:Dj5jcl8jEwrikwkaa_69lAWcA88@hautefood13

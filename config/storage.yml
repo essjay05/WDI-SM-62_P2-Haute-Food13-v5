@@ -14,6 +14,44 @@ local:
 #   region: us-east-1
 #   bucket: your_own_bucket
 
+# CLOUDINARY KEYSET info:
+---
+development:
+  cloud_name: hautefood13
+  api_key: '792843124671388'
+  api_secret: Dj5jcl8jEwrikwkaa_69lAWcA88
+  enhance_image_tag: true
+  static_file_support: false
+production:
+  cloud_name: hautefood13
+  api_key: '792843124671388'
+  api_secret: Dj5jcl8jEwrikwkaa_69lAWcA88
+  enhance_image_tag: true
+  static_file_support: true
+test:
+  cloud_name: hautefood13
+  api_key: '792843124671388'
+  api_secret: Dj5jcl8jEwrikwkaa_69lAWcA88
+  enhance_image_tag: true
+  static_file_support: false
+
+# Pusher KEY SET:
+development:
+  app_id: "690106"
+  key: "f6eaf85a60367f9dd647"
+  secret: "e156e3652f64fe38c8e0"
+  cluster: "mt1"
+staging:
+  app_id: "690107"
+  key: "b4dfbdf55b2332005785"
+  secret: "08a01515af3431c6d809"
+  cluster: "mt1"
+production:
+  app_id: "690108"
+  key: "6244d262194eb9db5e12"
+  secret: "e946beba46060b02c734"
+  cluster: "mt1"
+
 # Remember not to checkin your GCS keyfile to a repository
 # google:
 #   service: GCS
@@ -32,3 +70,5 @@ local:
 #   service: Mirror
 #   primary: local
 #   mirrors: [ amazon, google, microsoft ]
+
+
