@@ -29,6 +29,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 # Use Cloudinary For Media Upload and Management
 gem 'cloudinary'
+gem 'pusher'
 
 
 

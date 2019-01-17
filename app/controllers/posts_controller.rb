@@ -35,13 +35,15 @@ class PostsController < ApplicationController
     @value = Cloudinary::Uploader.upload(params[:image])
     # render plain: @value['secure_url']
     # create a new post object and save to db
-    @post = @user.posts.create(post_params)
+    @post = @user.posts.new(post_params)
     if @post.save
       # broadcasting posts using pusher
       Pusher.trigger('posts-channel','new-post', {
         image_uri: @post.image_uri,
         vendor: @post.vendor,
-        vendor_loc: @post.vendor_loc
+        vendor_loc: @post.vendor_loc,
+        tag: @post.tag,
+        user_id: @post.user_id
       })
       redirect_to users_path, success: "Success you've uploaded your photo!"
     else
