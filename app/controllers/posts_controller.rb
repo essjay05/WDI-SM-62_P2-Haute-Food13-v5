@@ -33,6 +33,8 @@ class PostsController < ApplicationController
     set_user
     # upload image to cloudinary
     @value = Cloudinary::Uploader.upload(params[:image])
+    # Pusher app key
+    @pusher_key = Rails.application.credentials.development[:pusher][:key]
     # render plain: @value['secure_url']
     # create a new post object and save to db
     @post = @user.posts.new(post_params)
@@ -47,7 +49,7 @@ class PostsController < ApplicationController
       })
       redirect_to users_path, success: "Success you've uploaded your photo!"
     else
-      render :new, danger: "Please check the error, somethign is wrong with your input."
+      render :new, danger: "Something is wrong with your input."
     end
   end
 

@@ -1,9 +1,8 @@
 <div class="row admin_add_video">
   <div class="col-md-6 offset-md-3">
-    <h1>Upload New Post</h1>
+    <h1>Upload New Photo</h1>
     <%= form_for(@post, url: user_posts_path(current_user.id)) do |p| %>  
       <div class="form-group">
-        <%= p.label :image_uri, 'Image*' %>
         <%= p.file_field :image_uri, class: 'form-control' %>
       </div>
 
