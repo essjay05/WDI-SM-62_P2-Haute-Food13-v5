@@ -44,10 +44,9 @@ class PostsController < ApplicationController
   # PATCH/PUT edited post
   def update
     set_user
-    set_post
+    @post = @user.posts.update_attributes(post_params)
     
-    if @post.update_attributes(post_params)
-     
+    if @post.save
       redirect_to user_posts_path, success: "Post successfully updated!"
     else
       render :edit
