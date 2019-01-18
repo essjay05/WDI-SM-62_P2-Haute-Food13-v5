@@ -28,14 +28,12 @@ gem 'jbuilder', '~> 2.5'
 gem 'bcrypt', '~> 3.1.7'
 
 # Use Cloudinary For Media Upload and Management
-gem 'cloudinary'
+
 
 
 
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
-gem 'fog-aws'
-gem 'carrierwave', '~> 1.0'
 gem 'aws-sdk-s3', require: false
 # Need to do rails active_storage:install .... then rails db:migrate
 
