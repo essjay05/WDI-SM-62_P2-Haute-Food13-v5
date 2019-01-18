@@ -6,15 +6,11 @@ class PostsController < ApplicationController
   # INDEX/SHOW all posts
   def index
     @posts = Post.all
-    set_user
   end
 
   # SHOW SINGLE POST
   def show
-    set_user
-    set_post
     render plain: params[:vendor].inspect
-    
   end
 
   # Render new post form/page
@@ -24,13 +20,10 @@ class PostsController < ApplicationController
 
   # Render edit post form/page
   def edit
-    set_user
-    set_post
   end
 
   # Create new post
   def create
-    set_user
     @post = @user.posts.create(post_params)
 
     if @post.save
@@ -41,12 +34,10 @@ class PostsController < ApplicationController
   end
 
 
-  # PATCH/PUT edited post
-  def update
-    set_user
-    @post = @user.posts.update_attributes(post_params)
-    
-    if @post.save
+  # PATCH/PUT edited post 
+  # NEED TO FIX: INVALID SIGNATURE ERROR
+  def update    
+    if @post.update_attributes(post_params)
       redirect_to user_posts_path, success: "Post successfully updated!"
     else
       render :edit
@@ -55,8 +46,6 @@ class PostsController < ApplicationController
 
   # DELETE/destroy post
   def destroy
-    set_user
-    set_post
     @post.destroy
     redirect_to user_path, success: "Post successfully deleted!"
   end

@@ -1,4 +1,4 @@
-<h1> Your Profile </h1>
+<h1> Your Yums! </h1>
 
 <p> <%= current_user.name %> | <%= current_user.email %> </p>
 
@@ -6,7 +6,7 @@
     
     <div class='image'>
         <% if p.image_uri.attached? %>
-        <%= image_tag(p.image_uri) %>
+        <p class='img'><%= image_tag(p.thumbnail) %></p>
         <% end %>
         <p><%= p.vendor %></p>
         <p><%= p.vendor_loc %></p>

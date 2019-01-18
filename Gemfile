@@ -31,6 +31,11 @@ gem 'bcrypt', '~> 3.1.7'
 # Use ActiveStorage variant
 gem 'mini_magick', '~> 4.8'
 gem 'aws-sdk-s3', require: false
+
+# Use BOOTSTRAP
+gem 'bootstrap'
+gem 'jquery-rails'
+
 # Need to do rails active_storage:install .... then rails db:migrate
 
 # Use Capistrano for deployment

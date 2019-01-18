@@ -1,9 +1,9 @@
-<h1>Users#index</h1>
-<p>Find me in app/views/users/index.html.erb</p>
+<h1>Haute Food13</h1>
+<h3>Community Feed</h3>
 
 <p id="notice"><%= notice %></p>
 
-<h1>Posts</h1>
+<h5>Posts</h5>
 
 <table>
   <thead>
@@ -17,7 +17,7 @@
       <tr>
         <td>
         <% if post.image_uri.attached? %>
-        <%= image_tag(post.image_uri) %>
+        <%= image_tag(post.thumbnail) %>
         <% end %>
         <p><%= post.vendor %></p>
         <p><%= post.vendor_loc %></p>

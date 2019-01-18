@@ -1,0 +1,62 @@
+@import "bootstrap";
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+
+ */
+//  .container {
+//     background-image: url("https://i.imgur.com/Zqt2fJ1.jpg");
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     width: 100%;
+//     height: auto;
+//     color: white;
+// }
+
+html, body, header, #intro {
+    height: 100%;
+}
+#intro {
+    background-image: url('https://i.imgur.com/vSEILl6.jpg')no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+}
+h1, h2, h3, h4, h5 {
+    font-family: 'Anton', sans-serif;
+    letter-spacing: .05rem;
+    color: #292C3D;
+}
+
+p, li { 
+    font-family: 'Montserrat', sans-serif;
+    color:	#296F79;
+}
+
+.card {
+    opacity: 95%;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+a:hover {
+    color: white;
+    cursor: pointer;
+}
+
+img {
+    width: 100px;
+
+}
+
