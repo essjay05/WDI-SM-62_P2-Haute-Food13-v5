@@ -22,19 +22,19 @@
   </head>
 
   <body class="container">
-  <div>
-    <%= render 'partials/navbar' %>
-    <div id='intro' class='view'>
-      <div class='fullBGimg'>
-      </div>
-    </div
-    <%= render 'partials/flash_msgs' %>
+    <div class="wrapper">
+      <%= render 'partials/navbar' %>
+        <div id='intro' class='view'>
+          <div class='fullBGimg'>
+          </div>
+        </div
+        <%= render 'partials/flash_msgs' %>
 
-    <main style = 'height: 4000px'>
-    </main>
-  
+        <main style = 'height: 4000px'>
+        </main>
+    
 
-    <%= yield %>
-  </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

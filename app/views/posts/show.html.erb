@@ -1,11 +1,13 @@
 <h1>Posts#show</h1>
 <p>Find me in app/views/posts/show.html.erb</p>
 
-<div class="post">
-<% @user.posts.each do |p| %>
-    <%= p.image_uri %>
-    <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/"><%= p.vendor %></a></p>
-    <p><%= p.vendor_loc %></p>
-    <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
-<% end %>
+<div class="posts-show">
+    <div class="post">
+        <% @user.posts.each do |p| %>
+            <%= p.image_uri %>
+            <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/"><%= p.vendor %></a></p>
+            <p><%= p.vendor_loc %></p>
+            <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/edit">Edit Post</a></p>
+        <% end %>
+    </div>
 </div>
