@@ -3,6 +3,6 @@ class Post < ApplicationRecord
     has_one_attached :image_uri
 
     def thumbnail
-       return self.image_uri.variant(resize: '300x300!')
+       return self.image_uri.variant(resize: '750x750!')
     end 
 end
