@@ -2,7 +2,7 @@
 <p>Find me in app/views/posts/show.html.erb</p>
 
 <div class="posts-show">
-    <div class="post">
+    <div class="post td">
         <% @user.posts.each do |p| %>
             <%= p.image_uri %>
             <p><a href="/users/<%= current_user.id %>/posts/<%= p.id %>/"><%= p.vendor %></a></p>

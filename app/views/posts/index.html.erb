@@ -2,7 +2,7 @@
 <p>Find me in app/views/posts/index.html.erb</p>
 
 <h1> TESTING!!! </h1>
-<div class="post">
+<div class="post td">
 <% @user.posts.reverse_each do |p| %>
     <img src ="<%= p.image_uri %>">
     <p>Vendor: <%= p.vendor %></p>
